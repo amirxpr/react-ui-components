@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import EditableText from './Components/EditableTextComponent';
+import Table from './Components/TableComponent';
 
 function App() {
+  const columns = [
+    {
+      title: 'Name',
+      key: 'name',
+    },
+    {
+      title: 'Age',
+      key: 'age',
+    },
+    {
+      title: 'Address',
+      key: 'address',
+    },
+    {
+      title: 'Test',
+      key: 'aa',
+    }
+  ]
+
+  const dataSource = [
+    {
+      name: 'Mike',
+      age: 32,
+      address: '10 Downing Street',
+      aa: '10 Downing Street',
+    },
+    {
+      name: 'John',
+      age: 42,
+      address: '10 Downing Street',
+      aa: '10 Downing Street',
+    },
+  ];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <EditableText value='Editable text!' />
+      <Table columns={columns} dataSource={dataSource} />
     </div>
   );
 }
