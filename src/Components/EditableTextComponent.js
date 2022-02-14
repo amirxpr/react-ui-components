@@ -10,12 +10,12 @@ export default class EditableText extends Component {
         super(props);
         this.textInput = React.createRef();
         this.state = {
-            value: this.props.value,
+            value: props.value,
             type: 'text'
         }
     }
 
-    save =  () => {
+    save = () => {
         this.setState({
             value: this.textInput.current.value,
             type: 'text'
@@ -37,7 +37,6 @@ export default class EditableText extends Component {
                 <button onClick={this.save.bind(this)}> <FontAwesomeIcon icon={faCheck} color="blue" /></button>
             </div>
         )
-
     }
 }
 
