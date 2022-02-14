@@ -50,3 +50,7 @@ table th {
 table td {
     background-color: #fff;
 }
+
+table tr td:first-child{
+    width: 5%;
+}

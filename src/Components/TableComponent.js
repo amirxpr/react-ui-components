@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
 export default class Table extends Component {
-    state = {  }
+    state = { }
+
     render() {
         return ( 
         <div className='box'>
             <table>
                 <thead>
                     <tr>
-                    {this.props.columns.map((data) => (
-                        <th key={data.key}>{data.title}</th>
-                    ))}
+                        <th>Row</th>
+                        {this.props.columns.map((data) => (
+                            <th key={data.key}>{data.title}</th>
+                        ))}
                     </tr>
                 </thead>
                 <tbody>
