@@ -54,7 +54,48 @@ table td {
     background-color: #fff;
 }
 
-table tr td:first-child{
-    width: 5%;
-    text-align: center;
+
+a{
+    color: blue;
+    cursor: pointer;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.tag {
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    margin: 0 8px 0 0;
+    display: inline-block;
+    padding: 0 7px;
+    font-size: 14px;
+    background: #fafafa;
+}
+
+.tag-green {
+    color: #389e0d;
+    background: #f6ffed;
+    border-color: #b7eb8f;
+}
+
+.tag-geekblue {
+    color: #1d39c4;
+    background: #f0f5ff;
+    border-color: #adc6ff;
+}
+
+.tag-volcano {
+    color: #d4380d;
+    background: #fff2e8;
+    border-color: #ffbb96;
+}
+
+.space{
+    display: flex;
+}
+
+.space-item {
+    margin: 0 8px;
 }

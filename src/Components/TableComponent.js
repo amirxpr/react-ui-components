@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import RenderRow from './tabel/RenderRow';
 
 export default class Table extends Component {
-    state = { }
 
     render() {
         return ( 
@@ -9,19 +9,14 @@ export default class Table extends Component {
             <table>
                 <thead>
                     <tr>
-                        <th>Row</th>
                         {this.props.columns.map((data) => (
-                            <th key={data.key}>{data.title}</th>
+                            <th key={data.dataIndex}>{data.title}</th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
                     {this.props.dataSource.map((data) => (
-                        <tr key={data.key}>
-                            {Object.keys(data).map((key, value) => (
-                                <td key={key+value}>{data[key]}</td>
-                            ))}
-                        </tr>
+                        <RenderRow columns={this.props.columns} row={data} />
                     ))}
                 </tbody>
             </table>
