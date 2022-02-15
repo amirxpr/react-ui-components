@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RenderRow from './tabel/RenderRow';
+import RenderTD from './tabel/RenderRow';
 
 export default class Table extends Component {
 
@@ -10,13 +10,17 @@ export default class Table extends Component {
                 <thead>
                     <tr>
                         {this.props.columns.map((data) => (
-                            <th key={data.dataIndex}>{data.title}</th>
+                            <th key={data.key}>{data.title}</th>
                         ))}
                     </tr>
                 </thead>
                 <tbody>
                     {this.props.dataSource.map((data) => (
-                        <RenderRow columns={this.props.columns} row={data} />
+                        <tr key={data.key}>
+                            {this.props.columns.map((column) => (
+                                <RenderTD column={column} dataIndex={column.key + data.key} dataValue={data[column.dataIndex]} />
+                            ))}
+                        </tr>
                     ))}
                 </tbody>
             </table>

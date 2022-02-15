@@ -1,26 +1,7 @@
 import { Component } from "react";
 
 
-export default class RenderRow extends Component {
-
-    render() {
-        return (
-            <tr key={this.props.row.key}>
-                {this.props.columns.map((data) => (
-                    <RenderTD column={data} dataIndex={data.dataIndex} dataValue={this.props.row[data.dataIndex]} />
-                ))}
-            </tr>
-         );
-    }
-}
-
-RenderRow.defaultProps = {
-    columns: [],
-    row: Object(),
-}
-
-
-class RenderTD extends Component {
+export default class RenderTD extends Component {
 
     render() {
         if ("render" in this.props.column) {

@@ -6,7 +6,7 @@ export default class Space extends Component {
         return ( 
             <div className={'space ' + this.props.size} >
                 {this.props.children.map((data, index) => (
-                    <div className="space-item" key={index}>{data}</div>
+                    <div className="space-item" key={index + data.toString().toLowerCase()}>{data}</div>
                 ))}
             </div>
          );
